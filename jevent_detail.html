@@ -1,48 +1,43 @@
-<table class="contentpaneopen" style="border: 0px;">
-    <tbody>
-        <tr class="headingrow">
-            <td class="contentheading" style="width: 100%;">
-                <h1>{{Title:TITLE}}</h1>
-            </td>
-            <td class="buttonheading" style="width: 24px;box-sizing:border-box;" align="right">{{Ical Button:ICALBUTTON}}</td>
-            <td class="buttonheading" style="width: 24px;box-sizing:border-box;" align="right">{{Edit Button:EDITBUTTON}}</td>
-        </tr>
-        <tr>
-            <td colspan="3" valign="top" align="left">
-                <p><strong>{{Repeat Summary:REPEATSUMMARY}}</strong></p>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3" valign="top" align="left">
-                <p>{{Description:DESCRIPTION}}</p>
-            </td>
-        </tr>
-        <tr>
-            <td class="ev_detail" colspan="3" valign="top" align="left">
-                <p><strong>Start Location: </strong>{{Location:LOCATION}}</p>
-            </td>
-        </tr>
-        <tr>
-            <td class="ev_detail" colspan="3" valign="top" align="left">
-                <div style="display: {{RideWithGPS Route ID:ridewithgps_route_id#block#none !important}};">
-                    <iframe style="margin-top: 0px; margin-bottom: 0px;" src="https://ridewithgps.com/routes/{{RideWithGPS Route ID:ridewithgps_route_id}}/embed" frameborder="0" width="100%" height="700px"></iframe>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="ev_detail" colspan="3" valign="top" align="left">
-                <p><strong>{{Contact Label:CONTACT_LABEL}}</strong>{{Contact:CONTACT}}</p>
-            </td>
-        </tr>
-        <tr>
-            <td class="ev_detail" colspan="3" valign="top" align="left">
-	        {{Extra Info:EXTRAINFO}}
-	    </td>
-        </tr>
-        <tr>
-            <td class="ev_detail" colspan="3" valign="top" align="left" style="background-color:#eee">
-		{{Attendance Form:JEV_ATTENDFORM}}
-	    </td>
-        </tr>
-    </tbody>
-</table>
+<style>
+    .jev_eventd_detail {
+        padding: 0.5em 1em;
+    }
+
+    table#jevattendees {
+        width: 100%;
+    }
+</style>
+<div class="eventdetails_body">
+    <p class="buttonheading" style="float:right;"><strong>{{Edit Button:EDITBUTTON}}</strong></p>
+    <p class="buttonheading" style="float:right;"><strong>{{Ical Button:ICALBUTTON}}</strong></p>
+    <div class="contentheading jev_eventd_title">
+        <h3>{{Title:TITLE}}</h3>
+    </div>
+    <div class="jev_eventd_repeat_sum"><strong>{{Repeat Summary:REPEATSUMMARY}}</strong></div>
+    <div class="jev_eventd_desc">{{Description:DESCRIPTION}}</div>
+    <div class="jev_eventd_location">
+        <p><strong>Start Location: </strong>{{Location:LOCATION}}</p>
+    </div>
+    <div class="jev_eventd_location">
+        <p><strong>{{Contact Label:CONTACT_LABEL}}:</strong>{{Contact:CONTACT}}</p>
+    </div>
+
+    <div style="display: {{RideWithGPS Route ID:ridewithgps_route_id#block#none !important}};">
+        <iframe style="margin-top: 0px; margin-bottom: 0px;"
+                src="https://ridewithgps.com/routes/{{RideWithGPS Route ID:ridewithgps_route_id}}/embed"
+                frameborder="0" width="100%" height="700px"></iframe>
+    </div>
+
+
+    <div class="jev_eventd_detail">
+        {{Extra Info:EXTRAINFO}}
+    </div>
+    <div class="jev_eventd_detail" style="background-color:#cce">
+        {{Attendance Form:JEV_ATTENDFORM}}
+    </div>
+    <div class="jev_eventd_detail" style="background-color:#cec">
+        {{Attendees:ATTENDEES}}
+    </div>
+
+</div>
+<!-- /.eventdetails_body -->
